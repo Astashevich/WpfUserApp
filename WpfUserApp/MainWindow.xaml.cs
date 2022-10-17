@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfUserApp
 {
@@ -20,9 +8,13 @@ namespace WpfUserApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ApplicationDbContext _context;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _context = new ApplicationDbContext();
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
@@ -64,6 +56,11 @@ namespace WpfUserApp
                 textBoxEmail.Background = Brushes.Transparent;
 
                 MessageBox.Show("Registration completed successfully");
+
+                var user = new User(login, email, password);
+
+                _context.Users.Add(user);
+                _context.SaveChanges();
             }
         }
     }

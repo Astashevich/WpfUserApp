@@ -2,18 +2,18 @@
 {
     public class User
     {
-        private int id { get; set; }
-        private string login { get; set; }
-        private string password { get; set; }
-        private string email { get; set; }
+        public int Id { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
 
         public User() { }
 
         public User(string login, string email, string password)
         {
-            this.login = login;
-            this.email = email;
-            this.password = password;
+            Login = login;
+            Email = email;
+            Password = password;
         }
     }
 }
