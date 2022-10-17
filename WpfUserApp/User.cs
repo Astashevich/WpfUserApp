@@ -15,5 +15,10 @@
             Email = email;
             Password = password;
         }
+
+        /*public override string ToString()
+        {
+            return $"User: {Login}. Email: {Email}.";
+        }*/
     }
 }

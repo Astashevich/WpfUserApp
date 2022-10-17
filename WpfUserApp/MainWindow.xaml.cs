@@ -61,7 +61,18 @@ namespace WpfUserApp
 
                 _context.Users.Add(user);
                 _context.SaveChanges();
+
+                var userPageWindow = new UserPageWindow();
+                userPageWindow.Show();
+                Hide();
             }
+        }
+
+        private void ButtonWindowAuth_Click(object sender, RoutedEventArgs e)
+        {
+            var authWindow = new AuthWindow();
+            authWindow.Show();
+            Hide();
         }
     }
 }

@@ -52,9 +52,22 @@ namespace WpfUserApp
                     authUser = db.Users.Where(u => u.Login.Equals(login) && u.Password.Equals(password)).FirstOrDefault();
                 }
 
-                if (authUser != null) MessageBox.Show($"Welcome, {authUser.Login}");
+                if (authUser != null)
+                { 
+                    MessageBox.Show($"Welcome, {authUser.Login}"); 
+                    var userPageWindow = new UserPageWindow();
+                    userPageWindow.Show();
+                    Hide();
+                }
                 else MessageBox.Show("Oooppsss.... Something went wrong!");
             }
+        }
+
+        private void ButtonRegistrationWindow_Click(object sender, RoutedEventArgs e)
+        {
+            var regWindow = new MainWindow();
+            regWindow.Show();
+            Hide();
         }
     }
 }
