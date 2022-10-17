@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfUserApp.MainWindow"
+﻿<Window x:Class="WpfUserApp.AuthWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:WpfUserApp"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Application for users" Height="600" Width="700">
+        Title="Application for users" Height="400" Width="700">
     <Grid Background="#ffdadada">
         <Border MinWidth="400" MaxWidth="550" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0" />
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Hi there!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Authorization" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
 
                 <Grid Margin="0 0 0 20">
                     <Button HorizontalAlignment="Left" Content="Registration" />
@@ -22,10 +22,8 @@
 
                 <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Enter login" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <PasswordBox x:Name="passwordBox" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-                <PasswordBox x:Name="passwordBox_2" materialDesign:HintAssist.Hint="Repeat password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-                <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                
-                <Button Content="Register" Margin="0 20" Click="ButtonRegister_Click"/>
+
+                <Button Content="Login" Margin="0 20" Click="ButtonAuth_Click"/>
             </StackPanel>
         </Border>
     </Grid>
