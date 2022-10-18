@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace WpfUserApp
 {
@@ -15,6 +18,12 @@ namespace WpfUserApp
             InitializeComponent();
 
             _context = new ApplicationDbContext();
+
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.From = 0;
+            animation.To = 450;
+            animation.Duration = TimeSpan.FromSeconds(3);
+            RegistrationButton.BeginAnimation(Button.WidthProperty, animation);
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
